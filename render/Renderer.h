@@ -10,7 +10,7 @@
 
 class Renderer {
 private:
-    PointF translatePoint()
+    Point3F translatePoint()
 };
 
 

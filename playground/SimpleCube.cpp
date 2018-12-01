@@ -4,17 +4,17 @@
 
 #include "SimpleCube.h"
 
-SimpleCube::SimpleCube(PointF *origin, double width, double height, double depth) :
+SimpleCube::SimpleCube(Point3F *origin, double width, double height, double depth) :
         GeometryHolder(buildSegments(origin, width, height, depth), nullptr) {
 }
 
-Segment *SimpleCube::buildSegments(PointF *origin, double width, double height, double depth) {
+Segment *SimpleCube::buildSegments(Point3F *origin, double width, double height, double depth) {
     // All points relative to origin (0, 0, 0)
     // X expand toward positive (aka right)
     // Y expand toward positive (aka up)
     // Z expand toward positive (aka behind)
 
-    PointF points[8] = {
+    Point3F points[8] = {
             // Front face
             // Down left
             *origin,

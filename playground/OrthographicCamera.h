@@ -12,7 +12,7 @@
 class OrthographicCamera {
     static constexpr double CAMERA_MAX_DISTANCE = 500.0;
 public:
-    OrthographicCamera(PointF position, Viewport viewport);
+    OrthographicCamera(Point3F position, Viewport viewport);
     struct Bounds {
         double xMin;
         double xMax;
@@ -22,14 +22,14 @@ public:
         double zMax;
     };
 
-    void setPosition(PointF position);
+    void setPosition(Point3F position);
     void setDimensions(double width, double height);
     void setRotation(double pitch, double yaw);
-    bool isVisible(PointF point);
-    QPoint pointToQtPoint(PointF point);
+    bool isVisible(Point3F point);
+    QPoint transposePointToViewport(Point3F point);
 
 private:
-    PointF position;
+    Point3F position;
     double height, width;
     double pitch, yaw;
     Bounds bounds;

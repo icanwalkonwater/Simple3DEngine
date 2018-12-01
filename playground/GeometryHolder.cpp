@@ -4,7 +4,7 @@
 
 #include "GeometryHolder.h"
 
-GeometryHolder::GeometryHolder(Segment *segments, PointF *points) {
+GeometryHolder::GeometryHolder(Segment *segments, Point3F *points) {
     this->segments = segments;
     this->points = points;
 }
@@ -13,6 +13,6 @@ Segment* GeometryHolder::getSegments() {
     return this->segments;
 }
 
-PointF* GeometryHolder::getPoints() {
+Point3F* GeometryHolder::getPoints() {
     return this->points;
 }

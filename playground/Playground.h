@@ -20,7 +20,7 @@ public:
     void addObject(GeometryHolder object);
 
 private:
-    PointF origin;
+    Point3F origin;
     OrthographicCamera *camera;
 
     std::vector<GeometryHolder> objects;

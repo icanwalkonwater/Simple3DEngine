@@ -10,13 +10,13 @@ struct Viewport {
     int height;
 };
 
-struct Point {
+struct Point3 {
     int x = 0;
     int y = 0;
     int z = 0;
 };
 
-struct PointF {
+struct Point3F {
     double x = 0.0;
     double y = 0.0;
     double z = 0.0;
@@ -28,8 +28,8 @@ struct Pair {
 };
 
 struct Segment {
-    PointF *left;
-    PointF *right;
+    Point3F *left;
+    Point3F *right;
 };
 
 #endif //SIMPLE3DENGINE_UTILS_H

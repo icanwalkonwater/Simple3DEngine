@@ -4,7 +4,7 @@
 
 #include "OrthographicCamera.h"
 
-OrthographicCamera::OrthographicCamera(PointF position, Viewport viewport) {
+OrthographicCamera::OrthographicCamera(Point3F position, Viewport viewport) {
     this->position = position;
     this->width = (double) viewport.width;
     this->height = (double) viewport.height;
@@ -24,7 +24,7 @@ void OrthographicCamera::calculateBounds() {
     };
 }
 
-void OrthographicCamera::setPosition(PointF position) {
+void OrthographicCamera::setPosition(Point3F position) {
     this->position = position;
     calculateBounds();
 }
@@ -40,14 +40,14 @@ void OrthographicCamera::setRotation(double pitch, double yaw) {
     this->yaw = yaw;
 }
 
-bool OrthographicCamera::isVisible(PointF point) {
+bool OrthographicCamera::isVisible(Point3F point) {
     // Camera has no rotation
     return point.x > bounds.xMin && point.x < bounds.xMax
            && point.y > bounds.yMin && point.y < bounds.yMax
            && point.z > bounds.zMin && point.z < bounds.zMin;
 }
 
-QPoint OrthographicCamera::pointToQtPoint(PointF point) {
+QPoint OrthographicCamera::transposePointToViewport(Point3F point) {
     // Assuming that point is visible
     return {(int) point.x, (int) (height - point.y)};
 }
