@@ -5,6 +5,11 @@
 #ifndef SIMPLE3DENGINE_UTILS_H
 #define SIMPLE3DENGINE_UTILS_H
 
+struct Viewport {
+    int width;
+    int height;
+};
+
 struct Point {
     int x = 0;
     int y = 0;
@@ -12,9 +17,9 @@ struct Point {
 };
 
 struct PointF {
-    double x = 0;
-    double y = 0;
-    double z = 0;
+    double x = 0.0;
+    double y = 0.0;
+    double z = 0.0;
 };
 
 struct Pair {

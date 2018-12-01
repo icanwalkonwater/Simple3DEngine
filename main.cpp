@@ -4,7 +4,7 @@
 #include <QWidget>
 #include <QtGui/QPainter>
 #include "render/Canvas.h"
-#include "playground/Camera.h"
+#include "playground/OrthographicCamera.h"
 
 int main(int argc, char **argv) {
     std::cout << "Starting app..." << std::endl;
@@ -15,7 +15,7 @@ int main(int argc, char **argv) {
     canvas.setFixedSize(1400, 800);
     canvas.show();
 
-    Camera camera({0, 0, 0}, 0, 1400);
+    OrthographicCamera camera({0, 0, 0}, 0, 1400);
 
     return app.exec();
 }

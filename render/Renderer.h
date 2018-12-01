@@ -6,8 +6,11 @@
 #define SIMPLE3DENGINE_RENDERER_H
 
 
-class Renderer {
+#include "../Utils.h"
 
+class Renderer {
+private:
+    PointF translatePoint()
 };
 
 

@@ -8,20 +8,20 @@
 
 #include <vector>
 #include "../Utils.h"
-#include "Camera.h"
+#include "OrthographicCamera.h"
 #include "GeometryHolder.h"
 
 class Playground {
 public:
     Playground();
 
-    void setCamera(Camera camera);
+    void setCamera(OrthographicCamera camera);
     std::vector<GeometryHolder> getObjects();
     void addObject(GeometryHolder object);
 
 private:
     PointF origin;
-    Camera *camera;
+    OrthographicCamera *camera;
 
     std::vector<GeometryHolder> objects;
 };

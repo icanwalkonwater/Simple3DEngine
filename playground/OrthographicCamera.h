@@ -5,17 +5,14 @@
 #ifndef SIMPLE3DENGINE_CAMERA_H
 #define SIMPLE3DENGINE_CAMERA_H
 
-#ifndef CAMERA_MAX_DISTANCE
-#define CAMERA_MAX_DISTANCE 500.0
-#endif // CAMERA_MAX_DISTANCE
-
 #include <QtCore/QPointF>
 #include <QtCore/QRect>
 #include "../Utils.h"
 
-class Camera {
+class OrthographicCamera {
+    static constexpr double CAMERA_MAX_DISTANCE = 500.0;
 public:
-    Camera(PointF position, double width, double height);
+    OrthographicCamera(PointF position, Viewport viewport);
     struct Bounds {
         double xMin;
         double xMax;
@@ -29,6 +26,7 @@ public:
     void setDimensions(double width, double height);
     void setRotation(double pitch, double yaw);
     bool isVisible(PointF point);
+    QPoint pointToQtPoint(PointF point);
 
 private:
     PointF position;

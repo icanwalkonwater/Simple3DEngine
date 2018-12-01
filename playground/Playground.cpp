@@ -5,11 +5,11 @@
 #include "Playground.h"
 
 Playground::Playground() {
-    this->origin = {0, 0, 0};
+    this->origin = {0.0, 0.0, 0.0};
     this->camera = nullptr;
 }
 
-void Playground::setCamera(Camera camera) {
+void Playground::setCamera(OrthographicCamera camera) {
     this->camera = &camera;
 }
 
