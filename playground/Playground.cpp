@@ -9,6 +9,10 @@ Playground::Playground() {
     this->camera = nullptr;
 }
 
+OrthographicCamera Playground::getCamera() {
+    return *camera;
+}
+
 void Playground::setCamera(OrthographicCamera camera) {
     this->camera = &camera;
 }

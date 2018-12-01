@@ -22,8 +22,11 @@ public:
     Vector3F(double x, double y, double z);
 
     Point3F translatePoint(Point3F point);
+
     Vector3F sum(Vector3F other);
+
     Vector3F imul(double factor);
+
     Vector3F invert();
 
 private:

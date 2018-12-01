@@ -10,11 +10,12 @@
 
 class GeometryHolder {
 public:
-    Segment* getSegments();
-    Point3F* getPoints();
+    Segment *getSegments();
+
+    Point3F *getPoints();
 
 protected:
-    GeometryHolder(Segment* segments, Point3F* points);
+    GeometryHolder(Segment *segments, Point3F *points);
 
 private:
     Segment *segments;

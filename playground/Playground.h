@@ -15,8 +15,12 @@ class Playground {
 public:
     Playground();
 
+    OrthographicCamera getCamera();
+
     void setCamera(OrthographicCamera camera);
+
     std::vector<GeometryHolder> getObjects();
+
     void addObject(GeometryHolder object);
 
 private:

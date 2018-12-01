@@ -4,11 +4,11 @@
 
 #include "SimpleCube.h"
 
-SimpleCube::SimpleCube(Point3F *origin, double width, double height, double depth) :
+SimpleCube::SimpleCube(Point3F &origin, double width, double height, double depth) :
         GeometryHolder(buildSegments(origin, width, height, depth), nullptr) {
 }
 
-Segment *SimpleCube::buildSegments(Point3F *origin, double width, double height, double depth) {
+Segment *SimpleCube::buildSegments(Point3F &origin, double width, double height, double depth) {
     // All points relative to origin (0, 0, 0)
     // X expand toward positive (aka right)
     // Y expand toward positive (aka up)
@@ -17,23 +17,23 @@ Segment *SimpleCube::buildSegments(Point3F *origin, double width, double height,
     Point3F points[8] = {
             // Front face
             // Down left
-            *origin,
+            origin,
             // Down right
-            {origin->x + width, origin->y, origin->z},
+            {origin.x + width, origin.y, origin.z},
             // Up left
-            {origin->x, origin->y + height, origin->z},
+            {origin.x, origin.y + height, origin.z},
             // Up right
-            {origin->x + width, origin.y + height, origin->z},
+            {origin.x + width, origin.y + height, origin.z},
 
             // Back face
             // Down left
-            {origin->x, origin->y, origin->z + depth},
+            {origin.x, origin.y, origin.z + depth},
             // Down right
-            {origin->x + width, origin->y, origin->z + depth},
+            {origin.x + width, origin.y, origin.z + depth},
             // Up left
-            {origin->x, origin->y + height, origin->z + depth},
+            {origin.x, origin.y + height, origin.z + depth},
             // Up right
-            {origin->x + width, origin->y + height, origin->z + depth}
+            {origin.x + width, origin.y + height, origin.z + depth}
     };
 
     // 8 corners
@@ -44,7 +44,7 @@ Segment *SimpleCube::buildSegments(Point3F *origin, double width, double height,
     // n+2: Corner up left
     // n+3: Corner up right
 
-    Segment segments[12]{
+    Segment segments[12] {
             // Front face
             // Horizontal down
             {&points[0], &points[1]},

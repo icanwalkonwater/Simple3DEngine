@@ -4,9 +4,14 @@
 
 #include "Canvas.h"
 
-void Canvas::paintEvent(QPaintEvent *event) {
+void Canvas::paintEvent(QPaintEvent *) {
     QPainter painter(this);
-    painter.setPen(QPen(Qt::white, 5, Qt::SolidLine, Qt::RoundCap));
-    painter.drawLine(10, 10, 1390, 790);
-    painter.end();
+
+    Viewport newViewport = {size().width(), size().height()};
+    renderer->updateViewport(newViewport);
+    renderer->render(painter);
+}
+
+Canvas::Canvas(Renderer *renderer) {
+    this->renderer = renderer;
 }

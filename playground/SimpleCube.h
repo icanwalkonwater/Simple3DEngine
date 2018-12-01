@@ -11,12 +11,11 @@
 
 class SimpleCube : public GeometryHolder {
 public:
-    SimpleCube(Point3F *origin, double width, double height, double depth);
-    SimpleCube(Point3F *cornerDownLeftFront, Point3F *cornerUpRightBack);
+    SimpleCube(Point3F &origin, double width, double height, double depth);
 
 private:
     // size: 12
-    Segment* buildSegments(Point3F *origin, double width, double height, double depth);
+    Segment *buildSegments(Point3F &origin, double width, double height, double depth);
 };
 
 
