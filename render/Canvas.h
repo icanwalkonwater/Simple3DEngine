@@ -5,8 +5,8 @@
 #include <QtWidgets/QWidget>
 #include <QtGui/QPainter>
 
-#ifndef CSANDBOX_CANVAS_H
-#define CSANDBOX_CANVAS_H
+#ifndef SIMPLE3DENGINE_CANVAS_H
+#define SIMPLE3DENGINE_CANVAS_H
 
 
 class Canvas : public QWidget {
@@ -15,4 +15,4 @@ protected:
 };
 
 
-#endif //CSANDBOX_CANVAS_H
+#endif //SIMPLE3DENGINE_CANVAS_H

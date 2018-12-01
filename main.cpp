@@ -3,10 +3,10 @@
 #include <QApplication>
 #include <QWidget>
 #include <QtGui/QPainter>
-#include "Canvas.h"
-#include "Camera.h"
+#include "render/Canvas.h"
+#include "playground/Camera.h"
 
-int main(int argc, char** argv) {
+int main(int argc, char **argv) {
     std::cout << "Starting app..." << std::endl;
 
     QApplication app(argc, argv);
@@ -15,7 +15,7 @@ int main(int argc, char** argv) {
     canvas.setFixedSize(1400, 800);
     canvas.show();
 
-    Camera camera(QPointF(0, 0), 0, 1400);
+    Camera camera({0, 0, 0}, 0, 1400);
 
     return app.exec();
 }

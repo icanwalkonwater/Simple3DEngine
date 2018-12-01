@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12)
-project(Holy3DEngine)
+project(Simple3DEngine)
 
 set(CMAKE_CXX_STANDARD 14)
 
@@ -9,6 +9,6 @@ find_package(Qt5Gui REQUIRED)
 
 get_target_property(QtCoreLocation Qt5::Core LOCATION)
 
-add_executable(Holy3DEngine main.cpp Canvas.cpp Canvas.h Camera.cpp Camera.h)
+add_executable(Simple3DEngine main.cpp render/Canvas.cpp render/Canvas.h playground/Camera.cpp playground/Camera.h playground/Playground.cpp playground/Playground.h Utils.h playground/GeometryHolder.cpp playground/GeometryHolder.h playground/SimpleCube.cpp playground/SimpleCube.h render/Renderer.cpp render/Renderer.h)
 
-target_link_libraries(Holy3DEngine Qt5::Widgets)
+target_link_libraries(Simple3DEngine Qt5::Widgets)

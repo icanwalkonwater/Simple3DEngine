@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Holy3DEngine.iml" filepath="$PROJECT_DIR$/.idea/Holy3DEngine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Simple3DEngine.iml" filepath="$PROJECT_DIR$/.idea/Simple3DEngine.iml" />
     </modules>
   </component>
 </project>
