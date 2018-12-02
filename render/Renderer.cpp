@@ -22,15 +22,14 @@ void Renderer::render(QPainter &painter) {
     for (auto &obj : objs) {
 
         // for each point
-        printf(" Rendering %d points\n", static_cast<int>(sizeof(*obj.getPoints())));
-        for (int i = 0; i < sizeof(obj.getPoints()) / sizeof(*obj.getPoints()); ++i) {
+        printf("    Rendering %lu points\n", obj.getPoints().size());
+        for (int i = 0; i < obj.getPoints().size(); ++i) {
             drawPoint(obj.getPoints()[i], painter);
         }
 
         // for each segment
-        size_t __s = sizeof(obj.getSegments());
-        printf(" Rendering %zu segments\n", __s);
-        for (int j = 0; j < sizeof(obj.getSegments()) / sizeof(*obj.getSegments()); ++j) {
+        printf("    Rendering %lu segments\n", obj.getSegments().size());
+        for (int j = 0; j < obj.getSegments().size(); ++j) {
             drawSegment(obj.getSegments()[j], painter);
         }
     }
@@ -39,14 +38,16 @@ void Renderer::render(QPainter &painter) {
 }
 
 void Renderer::drawSegment(Segment segment, QPainter &painter) {
-    if (playground->getCamera().isVisible(*segment.left)
-        && playground->getCamera().isVisible(*segment.right)) {
+    /*if (playground->getCamera().isVisible(*segment.left)
+        && playground->getCamera().isVisible(*segment.right)) {*/
 
         QPoint left = playground->getCamera().transposePointToViewport(*segment.left);
         QPoint right = playground->getCamera().transposePointToViewport(*segment.right);
 
+        printf("        Segment: (x: %lf, y: %lf, z: %lf) to (x: %lf, y: %lf, z: %lf)\n", segment.left->x, segment.left->y, segment.left->z, segment.right->x, segment.right->y, segment.right->z);
+        printf("        Drawing line from (x: %d, y: %d) to (x: %d, y: %d)\n", left.x(), left.y(), right.x(), right.y());
         painter.drawLine(left, right);
-    }
+    //}
 }
 
 void Renderer::drawPoint(Point3F point, QPainter &painter) {

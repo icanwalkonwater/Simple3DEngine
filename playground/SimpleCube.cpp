@@ -5,10 +5,10 @@
 #include "SimpleCube.h"
 
 SimpleCube::SimpleCube(Point3F &origin, double width, double height, double depth) :
-        GeometryHolder(buildSegments(origin, width, height, depth), nullptr) {
+        GeometryHolder(buildSegments(origin, width, height, depth), std::vector<Point3F>()) {
 }
 
-Segment *SimpleCube::buildSegments(Point3F &origin, double width, double height, double depth) {
+std::vector<Segment> SimpleCube::buildSegments(Point3F &origin, double width, double height, double depth) {
     // All points relative to origin (0, 0, 0)
     // X expand toward positive (aka right)
     // Y expand toward positive (aka up)
@@ -44,7 +44,7 @@ Segment *SimpleCube::buildSegments(Point3F &origin, double width, double height,
     // n+2: Corner up left
     // n+3: Corner up right
 
-    Segment segments[12] {
+    std::vector<Segment> segments = {
             // Front face
             // Horizontal down
             {&points[0], &points[1]},

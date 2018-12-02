@@ -6,20 +6,21 @@
 #define SIMPLE3DENGINE_GEOMETRYHOLDER_H
 
 
+#include <vector>
 #include "../Utils.h"
 
 class GeometryHolder {
 public:
-    Segment *getSegments();
+    std::vector<Segment> getSegments();
 
-    Point3F *getPoints();
+    std::vector<Point3F> getPoints();
 
 protected:
-    GeometryHolder(Segment *segments, Point3F *points);
+    GeometryHolder(std::vector<Segment> const &segments, std::vector<Point3F> const &points);
 
 private:
-    Segment *segments;
-    Point3F *points;
+    std::vector<Segment> segments;
+    std::vector<Point3F> points;
 };
 
 

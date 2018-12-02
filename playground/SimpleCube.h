@@ -14,8 +14,7 @@ public:
     SimpleCube(Point3F &origin, double width, double height, double depth);
 
 private:
-    // size: 12
-    Segment *buildSegments(Point3F &origin, double width, double height, double depth);
+    std::vector<Segment> buildSegments(Point3F &origin, double width, double height, double depth);
 };
 
 
