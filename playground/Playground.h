@@ -21,7 +21,7 @@ public:
 
     std::vector<GeometryHolder> getObjects();
 
-    void addObject(GeometryHolder object);
+    void addObject(GeometryHolder &object);
 
 private:
     Point3F origin;

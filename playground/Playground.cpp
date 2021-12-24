@@ -21,6 +21,6 @@ std::vector<GeometryHolder> Playground::getObjects() {
     return this->objects;
 }
 
-void Playground::addObject(GeometryHolder object) {
+void Playground::addObject(GeometryHolder &object) {
     this->objects.push_back(object);
 }

@@ -17,9 +17,9 @@ struct Point3 {
 };
 
 struct Point3F {
-    double x = 0.0;
-    double y = 0.0;
-    double z = 0.0;
+    double x;
+    double y;
+    double z;
 };
 
 struct Pair {

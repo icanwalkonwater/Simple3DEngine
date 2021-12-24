@@ -11,12 +11,11 @@
 
 class GeometryHolder {
 public:
+    GeometryHolder(std::vector<Segment> const &segments, std::vector<Point3F> const &points);
+
     std::vector<Segment> getSegments();
 
     std::vector<Point3F> getPoints();
-
-protected:
-    GeometryHolder(std::vector<Segment> const &segments, std::vector<Point3F> const &points);
 
 private:
     std::vector<Segment> segments;

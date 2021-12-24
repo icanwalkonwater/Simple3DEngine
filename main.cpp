@@ -17,6 +17,21 @@ int main(int argc, char **argv) {
     Point3F origin = {500.0, 200.0, 0.0};
     SimpleCube cube(origin, 400.0, 400.0, 400.0);
 
+
+    Point3F p1 {
+        200.0, 50.0, 0.0
+    };
+
+    Point3F p2 {
+        1000.0, 500.0, 100.0
+    };
+
+    std::vector<Segment> yolo {
+            {&p1, &p2}
+    };
+
+    GeometryHolder segm(yolo, std::vector<Point3F>());
+
     playground.addObject(cube);
 
     Renderer renderer(playground);

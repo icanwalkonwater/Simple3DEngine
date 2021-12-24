@@ -6,6 +6,7 @@
 
 void Canvas::paintEvent(QPaintEvent *) {
     QPainter painter(this);
+    painter.setPen(Qt::white);
 
     Viewport newViewport = {size().width(), size().height()};
     renderer->updateViewport(newViewport);
